@@ -29,7 +29,7 @@
             <tr *ngFor="let post of posts ;trackBy: trackId">
                 <td><a [routerLink]="['/post', post.id, 'view' ]">{{post.id}}</a></td>
                 <td>{{post.title}}</td>
-                <td>{{post.content}}</td>
+                <td [innerHTML]="post.content"></td>
                 <td>{{post.date | date:'medium'}}</td>
                 <td>
                     <div *ngIf="post.blog">
